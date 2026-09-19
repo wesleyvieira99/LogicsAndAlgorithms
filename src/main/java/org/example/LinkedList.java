@@ -35,7 +35,7 @@ public class LinkedList {
             // Otherwise, simply move it to the next node in its current list.
             // By swapping lists, ptrA will traverse a total length of Length(A) + Length(B).
             if (ptrA == null) {
-                ptrA = ptrB;
+                ptrA = headB;
             } else {
                 ptrA = ptrA.next;
             }
