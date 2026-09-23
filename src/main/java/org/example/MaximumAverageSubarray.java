@@ -26,6 +26,14 @@ public class MaximumAverageSubarray {
         for(int i = k; i < nums.length; i++) {
             //Add the new element entering the window , subtract the one leaving
             //With this manner, we are going each step to an item to the left
+
+            /*
+            When the window moves one position to the right, it loses the leftmost element
+            and gains a new element on the right. Instead of recalculating the entire sum,
+            subtract the element that dropped off and add the one that came in. This is the
+            fixed-size sliding window pattern: compute the sum of the first window once, then
+            move it across the array with a single addition and subtraction per step.
+            * */
             currentSum += nums[i] - nums[i - k];
 
             //Update the maximum sum found so far
@@ -33,7 +41,7 @@ public class MaximumAverageSubarray {
         }
 
         // Final Step: instead of dividing every window's sum by k during comparison, track the maximum sum and divide once at the end.
-        return maxSum / k;
+        return (double) maxSum / k;
     }
 
 }
