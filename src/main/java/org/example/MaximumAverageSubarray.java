@@ -32,6 +32,7 @@ public class MaximumAverageSubarray {
             maxSum = Math.max(maxSum, currentSum);
         }
 
+        // Final Step: instead of dividing every window's sum by k during comparison, track the maximum sum and divide once at the end.
         return maxSum / k;
     }
 
